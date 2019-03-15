@@ -1,22 +1,18 @@
-import React from 'react'
-import ApolloClient from 'apollo-boost'
-import { ApolloProvider } from 'react-apollo'
+import React from 'react';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+import './App.css';
 
-import Posts from './queries/Posts'
+import Articles from './queries/Articles';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000'
+  uri: 'http://localhost:4000',
 });
 
 const App = () => (
   <ApolloProvider client={client}>
-    <div>
-      <h1>Blogs</h1>
-      <div>
-        <Posts />
-      </div>
-    </div>
+    <Articles />
   </ApolloProvider>
-)
+);
 
-export default App
+export default App;
