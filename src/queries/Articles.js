@@ -1,13 +1,8 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import ReactMarkdown from 'react-markdown';
 
-const Article = ({ content }) => (
-  <React.Fragment>
-    <ReactMarkdown source={content} />
-  </React.Fragment>
-);
+import Article from '../components/Article';
 
 const Articles = () => (
   <Query
