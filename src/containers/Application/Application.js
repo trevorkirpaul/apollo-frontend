@@ -1,18 +1,21 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
-import './App.css';
 
-import Articles from './queries/Articles';
+import Router from 'containers/Router';
+
+import * as S from './styles';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000',
 });
 
 const App = () => (
-  <ApolloProvider client={client}>
-    <Articles />
-  </ApolloProvider>
+  <S.Application>
+    <ApolloProvider client={client}>
+      <Router />
+    </ApolloProvider>
+  </S.Application>
 );
 
 export default App;
