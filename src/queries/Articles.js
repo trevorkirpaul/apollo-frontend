@@ -4,22 +4,23 @@ import gql from 'graphql-tag';
 
 import Article from '../components/Article';
 
+const query = gql`
+  {
+    articles {
+      title
+      content
+      id
+    }
+  }
+`;
+
 const Articles = () => (
-  <Query
-    query={gql`
-      {
-        articles {
-          title
-          content
-          id
-        }
-      }
-    `}
-  >
+  <Query query={query}>
     {({ loading, error, data }) => {
       if (loading) {
         return <p>loading</p>;
       }
+
       if (error) {
         return <p>error</p>;
       }

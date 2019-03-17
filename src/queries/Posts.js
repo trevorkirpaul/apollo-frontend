@@ -1,6 +1,6 @@
-import React from "react";
-import { Query } from "react-apollo";
-import gql from "graphql-tag";
+import React from 'react';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 
 const Post = ({ title, body, author: { email } }) => (
   <React.Fragment>
@@ -8,7 +8,7 @@ const Post = ({ title, body, author: { email } }) => (
     <p>body: {body}</p>
     <p>author: {email}</p>
   </React.Fragment>
-)
+);
 
 const Posts = () => (
   <Query
@@ -27,13 +27,14 @@ const Posts = () => (
     `}
   >
     {({ loading, error, data }) => {
-      if (loading) return <p>loading...</p>;
-      if (error) return <p>Error</p>;
-      console.log({ data });
+      if (loading) {
+        return <p>loading...</p>;
+      }
+      if (error) {
+        return <p>Error</p>;
+      }
 
-      return data.posts.map(post => (
-        <Post key={post.id} {...post} />
-      ))
+      return data.posts.map(post => <Post key={post.id} {...post} />);
     }}
   </Query>
 );
