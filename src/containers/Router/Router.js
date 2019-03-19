@@ -10,6 +10,7 @@ const Router = () => (
       <NavBar />
       <Switch>
         <Route exact path="/" component={Articles} />
+        <Route exact path="/articles" component={Articles} />
       </Switch>
     </React.Fragment>
   </BrowserRouter>

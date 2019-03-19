@@ -7,7 +7,7 @@ const NavBar = () => {
     <S.NavBar>
       <S.Section>
         <S.Link to="/">Home</S.Link>
-        <S.Link to="/">Articles</S.Link>
+        <S.Link to="/articles">Articles</S.Link>
         <S.Link to="/">Posts</S.Link>
       </S.Section>
 
